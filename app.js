@@ -17,7 +17,7 @@ const SPONSOR_CATEGORIES = ["sponsor", "selfpromo", "interaction"];
 
 const DEFAULTS = {
   dailyCount: 12,
-  thumbs: "soft", // soft | full | frames | off
+  thumbs: "frames", // frames | soft | full | off
   communityTitles: true,
   skipSponsors: true,
   premium: false, // use youtube.com embeds so a Premium login removes ads
@@ -178,6 +178,17 @@ function courseState(co) {
   return { done, next, total, all: co.lessons.every((l) => l.duration) };
 }
 
+// Keeps a ranked list's order but avoids runs from the same channel.
+function diversify(list, gap = 3) {
+  const rest = [...list], out = [];
+  while (rest.length) {
+    const recent = out.slice(-gap).map((v) => v.channel);
+    const i = rest.findIndex((v) => !recent.includes(v.channel));
+    out.push(...rest.splice(i === -1 ? 0 : i, 1));
+  }
+  return out;
+}
+
 // ---------- rendering helpers ----------
 const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 function ago(iso) {
@@ -281,8 +292,8 @@ const views = {
       const terms = q.toLowerCase().split(/\s+/).filter(Boolean);
       list = list.filter((v) => { const s = `${v.yt} ${v.da ?? ""} ${v.channel} ${v.summary} ${v.why ?? ""}`.toLowerCase(); return terms.every((t) => s.includes(t)); });
     }
-    if (sort === "classics") list = list.filter((v) => v.classic).sort((a, b) => (b.score ?? 0) - (a.score ?? 0));
-    else if (sort === "loved") list = [...list].sort((a, b) => (b.score ?? 0) - (a.score ?? 0));
+    if (sort === "classics") list = diversify(list.filter((v) => v.classic).sort((a, b) => (b.score ?? 0) - (a.score ?? 0)));
+    else if (sort === "loved") list = diversify([...list].sort((a, b) => (b.score ?? 0) - (a.score ?? 0)));
     else if (sort === "new") list = [...list].sort((a, b) => b.published.localeCompare(a.published));
     const off = new Set(store.get("topicsOff"));
     const chans = topic && sort !== "picks" ? topics.find((t) => t.key === topic)?.channels.filter((c) => !store.get("hiddenChannels").includes(c.id)) ?? [] : [];

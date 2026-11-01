@@ -1,11 +1,14 @@
 // Extra facts about each video from public, community-run databases,
 // plus the official YouTube Data API when a key is configured.
-import { getJSON, each, isoDuration, DAY } from "./util.mjs";
+import { get, getJSON, each, isoDuration, DAY } from "./util.mjs";
 
 // DeArrow (dearrow.ajay.app): viewer-written, non-clickbait titles and
 // thumbnails chosen from real frames. Data licensed CC BY-NC-SA 4.0.
 export async function dearrow(id) {
-  const b = await getJSON(`https://sponsor.ajay.app/api/branding?videoID=${id}`);
+  const r = await get(`https://sponsor.ajay.app/api/branding?videoID=${id}`);
+  if (!r) return null; // network trouble: try again next run
+  if (r.status === 404) return { title: null, thumbTime: null, duration: null }; // nothing submitted yet
+  const b = r.ok ? await r.json().catch(() => null) : null;
   if (!b) return null;
   const t = (b.titles || []).find((x) => x.locked || x.votes >= 0);
   const th = (b.thumbnails || []).find((x) => x.locked || x.votes >= 0);

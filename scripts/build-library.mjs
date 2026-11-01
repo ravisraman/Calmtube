@@ -78,7 +78,6 @@ for (const f of fresh.values()) {
 // channels may have moved topic in channels.json
 for (const v of videos.values()) { const c = channelById.get(v.channelId); v.topic = c.topic; v.channel = c.name; v.yt ??= v.title; }
 for (const v of videos.values()) if (BAIT.some((r) => r.test(v.yt))) videos.delete(v.id);
-for (const v of videos.values()) if (v.da?.includes(">")) v.chk.da = 0; // re-fetch titles saved before the ">" fix
 
 // ---------- 3. embeddable? (new videos only; oEmbed answers 401 when embedding is off) ----------
 async function embeddable(id) {

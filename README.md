@@ -10,7 +10,7 @@ A quiet way to watch YouTube. It shows a hand-picked set of channels on running 
 - **Community picks.** Talks and lectures the Hacker News community upvoted most, sorted into your topics.
 - **Channels you might like.** Suggestions from the channels your favourite creators recommend and from community picks. You add one by putting its handle in the channel list.
 - **No autoplay and no "up next."** When a video ends you get a short breathing prompt and a box to note one thing worth remembering.
-- **Less clickbait.** Shorts, livestreams, premieres and bait titles are filtered out. Titles are replaced with [DeArrow](https://dearrow.ajay.app)'s viewer-written plain titles where one exists (hover to see the original). Thumbnails start muted, and you can switch them to real frames from the video or hide them. View counts never appear.
+- **Less clickbait.** Shorts, livestreams, premieres and bait titles are filtered out. Titles are replaced with [DeArrow](https://dearrow.ajay.app)'s viewer-written plain titles where one exists (hover to see the original). Thumbnails show a real frame from the video instead of the designed, attention-grabbing one; you can switch to muted or full-colour thumbnails, or hide them. View counts never appear.
 - **Sponsor reads skipped automatically** using [SponsorBlock](https://sponsor.ajay.app). The lookup uses a hash prefix, so SponsorBlock never learns which video you're watching.
 - **Resume where you left off**, and a **gentle break reminder** after 40 minutes (adjustable).
 - **Private.** Saved videos, notes, progress and settings stay in your browser. You can export and import them in Settings.

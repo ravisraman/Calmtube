@@ -1,0 +1,114 @@
+{
+  "running": {
+    "label": "Running & Endurance",
+    "handles": [
+      "stevemagness",
+      "SethJamesDeMoor",
+      "BenParkes",
+      "GTN",
+      "gcn",
+      "WorldAthletics",
+      "richroll",
+      "kilianjornet",
+      "runningchannel",
+      "Vo2maxProductions",
+      "runningwritings",
+      "TheRunExperience",
+      "CITIUSMAG"
+    ]
+  },
+  "fitness": {
+    "label": "Fitness & Health",
+    "handles": [
+      "JeffNippard",
+      "PeterAttiaMD",
+      "hubermanlab",
+      "TomMerrick",
+      "drandygalpin",
+      "SquatUniversity",
+      "DrStacySims"
+    ]
+  },
+  "ai": {
+    "label": "AI & Machine Learning",
+    "handles": [
+      "3blue1brown",
+      "AndrejKarpathy",
+      "Computerphile",
+      "statquest",
+      "MachineLearningStreetTalk",
+      "DwarkeshPatel",
+      "aiexplained-official",
+      "TwoMinutePapers",
+      "anthropic-ai",
+      "YannicKilcher",
+      "lexfridman",
+      "welchlabs"
+    ]
+  },
+  "history": {
+    "label": "History",
+    "handles": [
+      "FallofCivilizations",
+      "HistoriaCivilis",
+      "KingsandGenerals",
+      "InvictaHistory",
+      "toldinstone",
+      "Epimetheus1",
+      "extrahistory",
+      "TheArmchairHistorian",
+      "OverSimplified",
+      "crashcourse",
+      "HistoryMarche"
+    ]
+  },
+  "yoga": {
+    "label": "Yoga & Movement",
+    "handles": [
+      "yogawithadriene",
+      "YogaWithKassandra",
+      "YogawithTim",
+      "breathenflowyoga",
+      "SarahBethYoga"
+    ]
+  },
+  "mind": {
+    "label": "Meditation & Eastern Wisdom",
+    "handles": [
+      "plumvillageapp",
+      "VedantaNY",
+      "EckhartTolle",
+      "TaraBrach",
+      "RamDass",
+      "AlanWattsOrg",
+      "Sadhguru",
+      "SamHarrisOrg",
+      "MingyurRinpoche"
+    ]
+  },
+  "philosophy": {
+    "label": "Philosophy & Living Well",
+    "handles": [
+      "theschooloflifetv",
+      "Einzelgaenger",
+      "academyofideas",
+      "PursuitofWonder",
+      "bigthink"
+    ]
+  },
+  "wonder": {
+    "label": "Science & Wonder",
+    "handles": [
+      "kurzgesagt",
+      "pbsspacetime",
+      "SmarterEveryDay",
+      "stevemould",
+      "RealEngineering",
+      "PrimerBlobs",
+      "bbcearth",
+      "Vsauce",
+      "minutephysics",
+      "SabineHossenfelder"
+    ]
+  }
+}

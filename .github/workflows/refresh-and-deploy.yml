@@ -1,4 +1,4 @@
-name: Refresh library and deploy
+name: Refresh library
 
 on:
   schedule:
@@ -7,22 +7,19 @@ on:
     branches: [main, master]
   workflow_dispatch:
 
+# GitHub Pages serves this branch directly, so committing the refreshed
+# library is all it takes to update the site.
 permissions:
   contents: write
-  pages: write
-  id-token: write
 
 concurrency:
-  group: pages
+  group: refresh
   cancel-in-progress: false
 
 jobs:
   build:
     runs-on: ubuntu-latest
     timeout-minutes: 90
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -48,14 +45,3 @@ jobs:
           git config user.email "calmtube-bot@users.noreply.github.com"
           git add channels.json data/
           git diff --staged --quiet || (git commit -m "Refresh video library" && git pull --rebase -X theirs && git push)
-
-      - name: Collect site files
-        run: |
-          mkdir _site
-          cp -r index.html app.js style.css channels.json data _site/
-      - uses: actions/configure-pages@v5
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: _site
-      - id: deployment
-        uses: actions/deploy-pages@v4

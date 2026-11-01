@@ -69,8 +69,9 @@ python3 -m http.server 8000      # then open http://localhost:8000
 
 ### Hosting on GitHub Pages
 
-1. In the repo, go to **Settings → Pages → Build and deployment** and set **Source** to **GitHub Actions**.
-2. The *Refresh library and deploy* workflow runs on every push and once a day.
+1. The site lives at `https://<your-username>.github.io/<repo-name>/`.
+2. In the repo, go to **Settings → Pages** and set **Source** to **Deploy from a branch**, branch `master`, folder `/ (root)`.
+3. The *Refresh library* workflow runs once a day (and on every push) and commits the new library, which republishes the site.
 
 ## Changing what's in it
 

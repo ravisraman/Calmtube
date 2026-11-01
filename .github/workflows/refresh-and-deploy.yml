@@ -19,27 +19,43 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 90
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 22
+          cache: npm
+      - run: npm ci
+
+      # Both keys are optional. Add them under Settings → Secrets and variables → Actions.
       - name: Resolve any new channel handles
         run: node scripts/resolve-channels.mjs
-      - name: Fetch latest videos
-        run: node scripts/fetch-videos.mjs
+        env:
+          YT_API_KEY: ${{ secrets.YT_API_KEY }}
+      - name: Build the library
+        run: node scripts/build-library.mjs
+        env:
+          YT_API_KEY: ${{ secrets.YT_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+
       - name: Commit refreshed library
         run: |
           git config user.name "calmtube-bot"
           git config user.email "calmtube-bot@users.noreply.github.com"
-          git add channels.json data/videos.json
-          git diff --staged --quiet || (git commit -m "Refresh video library" && git push)
+          git add channels.json data/
+          git diff --staged --quiet || (git commit -m "Refresh video library" && git pull --rebase && git push)
+
+      - name: Collect site files
+        run: |
+          mkdir _site
+          cp -r index.html app.js style.css channels.json data _site/
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: _site
       - id: deployment
         uses: actions/deploy-pages@v4
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}

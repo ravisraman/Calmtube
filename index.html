@@ -16,6 +16,7 @@
     <nav class="nav" aria-label="Main">
       <a href="#today" data-nav="today">Today</a>
       <a href="#explore" data-nav="explore">Explore</a>
+      <a href="#courses" data-nav="courses">Courses</a>
       <a href="#saved" data-nav="saved">Saved</a>
       <a href="#settings" data-nav="settings" aria-label="Settings">Settings</a>
     </nav>
@@ -30,6 +31,7 @@
 
   <footer class="foot">
     <p>No algorithm, no autoplay, no view counts. <span id="updated"></span></p>
+    <p class="credits">Community titles and thumbnails from <a href="https://dearrow.ajay.app" target="_blank" rel="noopener">DeArrow</a> and sponsor skipping from <a href="https://sponsor.ajay.app" target="_blank" rel="noopener">SponsorBlock</a> (CC BY-NC-SA 4.0). Like counts from <a href="https://returnyoutubedislike.com" target="_blank" rel="noopener">Return YouTube Dislike</a>. Community picks from <a href="https://news.ycombinator.com" target="_blank" rel="noopener">Hacker News</a>.</p>
   </footer>
 
   <dialog id="player" aria-label="Video player">
@@ -38,21 +40,25 @@
         <div>
           <p class="player-channel"></p>
           <h2 class="player-title"></h2>
+          <p class="player-orig"></p>
         </div>
         <button type="button" class="icon-btn" data-close aria-label="Close player">✕</button>
       </div>
       <div class="frame"><div id="yt"></div>
+        <div class="toast" role="status" hidden></div>
         <div class="endcard" hidden>
           <div class="breath" aria-hidden="true"></div>
           <p class="breath-label">Breathe in… and out.</p>
           <label class="note-label" for="note">One thing worth remembering</label>
           <textarea id="note" rows="2" placeholder="Optional. Saved to your notes."></textarea>
           <div class="end-actions">
+            <button type="button" class="btn" data-next-lesson hidden>Next lesson</button>
             <button type="button" class="btn" data-save-note>Save &amp; close</button>
             <button type="button" class="btn ghost" data-close>Close</button>
           </div>
         </div>
       </div>
+      <p class="player-why"></p>
       <p class="player-summary"></p>
       <div class="player-actions">
         <button type="button" class="btn ghost" data-toggle-save></button>

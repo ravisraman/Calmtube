@@ -1,0 +1,14 @@
+{
+  "name": "calmtube",
+  "private": true,
+  "type": "module",
+  "description": "A quiet, curated way to watch YouTube.",
+  "scripts": {
+    "build": "node scripts/build-library.mjs",
+    "resolve": "node scripts/resolve-channels.mjs",
+    "serve": "python3 -m http.server 8000"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "1.3.0"
+  }
+}

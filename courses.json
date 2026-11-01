@@ -1,0 +1,20 @@
+{
+  "courses": [
+    { "playlist": "PLAqhIrjkxbuWI23v9cThsA9GvCAUhRvKZ", "topic": "ai", "title": "Neural Networks: Zero to Hero", "by": "Andrej Karpathy", "note": "Build GPT from scratch, one idea at a time. The best hands-on path into how modern AI actually works." },
+    { "playlist": "PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi", "topic": "ai", "title": "Neural Networks, Visually", "by": "3Blue1Brown", "note": "The clearest visual intuition for neural nets, backpropagation, transformers and attention." },
+    { "playlist": "PLblh5JKOoLUICTaGLRoHQDuF_7q2GfuJF", "topic": "ai", "title": "Machine Learning, Clearly Explained", "by": "StatQuest", "note": "Short, friendly lessons on the core ideas of machine learning, from regression to neural networks." },
+    { "playlist": "PLtBw6njQRU-rwp5__7C0oIVt26ZgjG9NI", "topic": "ai", "title": "Introduction to Deep Learning", "by": "MIT 6.S191", "note": "MIT's fast-paced introductory deep learning course." },
+    { "playlist": "PLoROMvodv4rMiGQp3WXShtMGgzqpfVfbU", "topic": "ai", "title": "Machine Learning (CS229)", "by": "Stanford · Andrew Ng", "note": "The full Stanford course. Mathematical and thorough." },
+    { "playlist": "PL8dPuuaLjXtO65LeD2p4_Sb5XQ51par_b", "topic": "ai", "title": "Artificial Intelligence", "by": "CrashCourse", "note": "A gentle, broad tour of what AI is and how it is built." },
+    { "playlist": "PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab", "topic": "wonder", "title": "Essence of Linear Algebra", "by": "3Blue1Brown", "note": "The geometric intuition behind the maths that powers AI." },
+    { "playlist": "PLZHQObOWTQDMsr9K-rj53DwVRMYO3t5Yr", "topic": "wonder", "title": "Essence of Calculus", "by": "3Blue1Brown", "note": "Calculus as if you could have invented it yourself." },
+    { "playlist": "PL848F2368C90DDC3D", "topic": "wonder", "title": "Human Behavioral Biology", "by": "Stanford · Robert Sapolsky", "note": "A legendary lecture series on why we do what we do: genes, hormones, stress and culture." },
+    { "playlist": "PLBDA2E52FB1EF80C9", "topic": "history", "title": "World History", "by": "CrashCourse", "note": "From the agricultural revolution onward, brisk and surprisingly deep." },
+    { "playlist": "PL8dPuuaLjXtMczXZUmjb3mZSU1Roxnrey", "topic": "history", "title": "Big History", "by": "CrashCourse", "note": "13.8 billion years in ten episodes, from the Big Bang to us." },
+    { "playlist": "PL8dPuuaLjXtMwmepBjTSG593eG7ObzO7s", "topic": "history", "title": "US History", "by": "CrashCourse", "note": "American history, from colonisation onward." },
+    { "playlist": "PL8dPuuaLjXtNgK6MZucdYldNkMybYIHKR", "topic": "philosophy", "title": "Philosophy", "by": "CrashCourse", "note": "The big questions of philosophy, one at a time." },
+    { "playlist": "PLui6Eyny-UzwxbWCWDbTzEwsZnnROBTIL", "topic": "yoga", "title": "30 Days of Yoga", "by": "Yoga With Adriene", "note": "The classic 30-day practice. Short daily sessions that build a habit." },
+    { "playlist": "PLui6Eyny-UzzFFfpiil94CUrWKVMaqmkm", "topic": "yoga", "title": "HOME: A 30-Day Yoga Journey", "by": "Yoga With Adriene", "note": "A gentler 30-day series focused on coming home to your body." },
+    { "playlist": "PLDqahtm2vA70VohJ__IobJSOGFJ2SdaRO", "topic": "mind", "title": "Ask Swami", "by": "Swami Sarvapriyananda", "note": "Questions and answers on Vedanta, meditation and living with clarity. Dip in anywhere." }
+  ]
+}
